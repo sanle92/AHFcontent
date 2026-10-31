@@ -1,0 +1,7 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "ahf-public-push-scheduler",
+  "main": "push-scheduler.ts",
+  "compatibility_date": "2026-05-15",
+  "triggers": { "crons": ["*/5 * * * *"] },
+}

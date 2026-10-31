@@ -1,0 +1,16 @@
+When replacing an existing repository, remove these obsolete tracked paths.
+Preserve source originals in restricted local storage before removing them from tracking.
+A ZIP upload does not automatically delete older remote files or erase git history.
+
+package-lock.json
+public/robots.txt
+source-materials/WhatsApp Image 2026-10-16 at 8.27.06 AM(1).jpeg
+source-materials/WhatsApp Image 2026-10-16 at 8.27.07 AM (1)(1).jpeg
+source-materials/WhatsApp Image 2026-10-16 at 8.52.33 AM(1).jpeg
+source-materials/WhatsApp Image 2026-10-21 at 11.53.32 AM (1)(1).jpeg
+source-materials/WhatsApp Image 2026-10-21 at 11.53.34 AM(1).jpeg
+source-materials/WhatsApp Image 2026-10-21 at 8.42.22 PM(1).jpeg
+source-materials/WhatsApp Image 2026-10-23 at 11.56.19 AM.jpeg
+source-materials/WhatsApp Image 2026-10-23 at 11.56.20 AM (1).jpeg
+source-materials/WhatsApp Image 2026-10-23 at 11.56.20 AM (2).jpeg
+source-materials/WhatsApp Image 2026-10-23 at 11.56.20 AM.jpeg

@@ -1,0 +1,31 @@
+name: Isolated staging workflow check
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type ISOLATED STAGING to authorize synthetic records and independent publication tests'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  workflow-check:
+    if: inputs.confirmation == 'ISOLATED STAGING'
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e:staging
+        env:
+          AHF_E2E_STAGING_ORIGIN: ${{ secrets.AHF_E2E_STAGING_ORIGIN }}
+          AHF_E2E_AUTHOR_SESSION: ${{ secrets.AHF_E2E_AUTHOR_SESSION }}
+          AHF_E2E_PUBLISHER_SESSION: ${{ secrets.AHF_E2E_PUBLISHER_SESSION }}
+          AHF_E2E_WRITES_ALLOWED: 'yes'
